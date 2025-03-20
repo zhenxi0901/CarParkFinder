@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Card Details"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/editCardNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Card Number"
+        android:inputType="number"
+        android:maxLength="16"
+        android:padding="10dp"
+        android:background="@android:color/darker_gray"/>
+
+    <EditText
+        android:id="@+id/editExpiryDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Expiry Date (MM/YY)"
+        android:inputType="datetime"
+        android:maxLength="5"
+        android:padding="10dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/editCvv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CVV"
+        android:inputType="numberPassword"
+        android:maxLength="3"
+        android:padding="10dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pay $3.00"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"/>
+</LinearLayout>

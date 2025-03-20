@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CarParkFinder"
+        tools:targetApi="31">
+
+        <!-- LOGIN PAGE (DEFAULT ENTRY) -->
+        <activity
+            android:name=".view.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- REGISTER PAGE -->
+        <activity
+            android:name=".view.RegisterActivity"
+            android:exported="true"/>
+
+        <!-- MAIN APP SCREEN -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.CarParkFinder"/>
+
+        <!-- Car Park Details Page -->
+        <activity
+            android:name=".view.CarParkDetailsActivity"
+            android:exported="true"
+            android:label="Car Park Details"
+            android:theme="@style/Theme.CarParkDetails"/>
+
+        <!-- Favorites Page -->
+        <activity
+            android:name=".view.FavoritesActivity"
+            android:exported="true"
+            android:label="Favorites"
+            android:theme="@style/Theme.CarParkFinder"/>
+
+
+        <activity android:name=".view.PaymentActivity"/>
+        <activity android:name=".view.PaymentSuccessActivity"/>
+        <activity android:name=".view.PaymentFailActivity"/>
+
+    </application>
+</manifest>
