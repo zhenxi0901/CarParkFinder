@@ -114,8 +114,22 @@ public class CarParkDetailsActivity extends AppCompatActivity {
         // Save to Favorites
         CarParkEntity carPark = new CarParkEntity(carParkId, carParkNameText.getText().toString(), carParkAddressText.getText().toString());
         favoriteButton.setOnClickListener(v -> {
-            favoritesViewModel.addFavorite(carPark);
-            Toast.makeText(this, "Car Park Saved as Favorite!", Toast.LENGTH_SHORT).show();
+            favoritesViewModel.getFavorites().observe(this, favorites -> {
+                boolean alreadyExists = false;
+                for (CarParkEntity fav : favorites) {
+                    if (fav.getCarParkId().equals(carPark.getCarParkId())) {
+                        alreadyExists = true;
+                        break;
+                    }
+                }
+
+                if (!alreadyExists) {
+                    favoritesViewModel.addFavorite(carPark);
+                    Toast.makeText(this, "Car Park Saved as Favorite!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Car Park already in Favorites!", Toast.LENGTH_SHORT).show();
+                }
+            });
         });
 
         // Open Google Maps when "Get Directions" is Clicked
